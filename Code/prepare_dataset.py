@@ -56,7 +56,7 @@ class DatasetCreator:
 
         data = np.stack(np.array(patch_channels), axis=0)
 
-        print(data.shape, seg_data.shape)
+        print("check 1",data.shape, seg_data.shape)
 
         return seg_data, data
 
@@ -86,6 +86,8 @@ class DatasetCreator:
                     continue
 
                 # use patchify to split data into patches
+                # path are small cubes of the data
+                # 1,240,240,155 -> 3,3,2,,1,64,64,64
                 data = patchify.patchify(data, (len(hp["channel_names"]), hp["min_patch_size"], hp["min_patch_size"], hp["min_patch_size"]),
                                          step=hp["min_patch_size"]).squeeze(0)  # squeeze 0 to account for channel dim
                 seg_data = patchify.patchify(seg_data, (hp["min_patch_size"], hp["min_patch_size"], hp["min_patch_size"]),
@@ -93,7 +95,7 @@ class DatasetCreator:
                 
                 print("check 2", data.shape, seg_data.shape)
 
-                # save patches as separate numpy files
+                # save patches as separate numpy files in train and val directories
                 if SAVE:
                     for z in range(seg_data.shape[0]):
                         for y in range(seg_data.shape[1]):
@@ -118,8 +120,6 @@ class DatasetCreator:
         else:
             self.sample_names = os.listdir(hp["raw_data_dir"])
         
-        print(self.sample_names)
-
         if hp["do_preprocess"] == "Compute":
             self.preprocess()
         self.save()

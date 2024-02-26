@@ -39,13 +39,14 @@ if __name__ == "__main__":
         set_dir=hp["training_dir"],
         data_dir=hp["data_dir_name"],
         seg_dir=hp["seg_dir_name"])
+    
     plt.imshow(ds[0][0][0][10].cpu().numpy())
     plt.show()
-    plt.imshow(ds[0][0][1][10].cpu().numpy())
+    plt.imshow(ds[0][0][0][11].cpu().numpy())
     plt.show()
-    plt.imshow(ds[0][0][2][10].cpu().numpy())
+    plt.imshow(ds[0][0][0][12].cpu().numpy())
     plt.show()
-    plt.imshow(ds[0][0][3][10].cpu().numpy())
+    plt.imshow(ds[0][0][0][13].cpu().numpy())
     plt.show()
     plt.imshow(ds[0][1][10].cpu().numpy())
     plt.show()

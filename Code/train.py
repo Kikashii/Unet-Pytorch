@@ -14,7 +14,7 @@ from load_hyperparameters import hp
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 LEARNING_RATE = 0.0001
 BATCH_SIZE = 1
-NUMBER_OF_EPOCHS = 100
+NUMBER_OF_EPOCHS = 1
 SAVE_EVERY_X_EPOCHS = 1
 SAVE_MODEL_LOC = "None" # "./model_"
 LOAD_MODEL_LOC = None
