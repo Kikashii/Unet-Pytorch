@@ -22,7 +22,7 @@ class DatasetCreator:
             seg_data = nib.load(
                 hp["raw_data_dir"] + sample_name + "/" +
                 sample_name + "_" + hp["seg_channel_name"]
-                + ".nii").get_fdata()
+                + ".nii.gz").get_fdata()
             uniques = np.unique(seg_data, return_counts=True)[1]
             uniques = uniques / np.sum(uniques)
 
@@ -46,13 +46,13 @@ class DatasetCreator:
     # load the appropriate .nii files and convert to numpy arrays
     def load_data(self, sample):
         seg_data = nib.load(hp["raw_data_dir"] + sample + "/" +
-                            sample + "_" + hp["seg_channel_name"] + ".nii").get_fdata()
+                            sample + "_" + hp["seg_channel_name"] + ".nii.gz").get_fdata()
         seg_data[seg_data == 4] = 3  # 3rd class is labelled as 4
 
         patch_channels = []
         for channel in hp["channel_names"]:
             patch_channels.append(nib.load(hp["raw_data_dir"] +
-                                           sample + "/" + sample + "_" + channel + ".nii").get_fdata())
+                                           sample + "/" + sample + "_" + channel + ".nii.gz").get_fdata())
 
         data = np.stack(np.array(patch_channels), axis=0)
 
