@@ -22,7 +22,7 @@ LOAD_MODEL_LOC = None
 
 # converts an array into a one hot vector.
 # Source: https://stackoverflow.com/questions/36960320/convert-a-2d-matrix-to-a-3d-one-hot-matrix-numpy
-def onehot_initialization_v2(a, ncols=4):
+def onehot_initialization_v2(a, ncols=hp["num_classes"]):
     out = torch.zeros(a.numel(), ncols)
     out[torch.arange(a.numel()), a.ravel()] = 1
     return out.to(device=DEVICE)

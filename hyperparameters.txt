@@ -4,6 +4,7 @@ validation_dir:/content/gdrive/MyDrive/Project/Unet-Pytorch/prep/val/
 data_dir_name:data/
 seg_dir_name:mask/
 channel_names:flair
+num_classes:4
 seg_channel_name:seg
 min_patch_size:64
 load_data:False
