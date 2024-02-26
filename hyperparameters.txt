@@ -1,4 +1,4 @@
-raw_data_dir:/content/gdrive/MyDrive/Project/Unet-Pytorch/train_data
+raw_data_dir:/content/gdrive/MyDrive/Project/Unet-Pytorch/train_data/
 training_dir:/content/gdrive/MyDrive/Project/Unet-Pytorch/prep/train/
 validation_dir:/content/gdrive/MyDrive/Project/Unet-Pytorch/prep/val/
 data_dir_name:data/
