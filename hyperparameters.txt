@@ -1,8 +1,9 @@
 raw_data_dir:/content/gdrive/MyDrive/Project/Unet-Pytorch/train_data
 training_dir:/content/gdrive/MyDrive/Project/Unet-Pytorch/prep/train/
+validation_dir:/content/gdrive/MyDrive/Project/Unet-Pytorch/prep/val/
 data_dir_name:data/
 seg_dir_name:mask/
-channel_names:flair,t1,t1ce,t2
+channel_names:flair
 seg_channel_name:seg
 min_patch_size:64
 load_data:False

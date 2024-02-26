@@ -56,6 +56,8 @@ class DatasetCreator:
 
         data = np.stack(np.array(patch_channels), axis=0)
 
+        print(data.shape, seg_data.shape)
+
         return seg_data, data
 
     # save data in target output directories
@@ -116,8 +118,8 @@ class DatasetCreator:
         
         print(self.sample_names)
 
-        # if hp["do_preprocess"] == "Compute":
-        #     self.preprocess()
+        if hp["do_preprocess"] == "Compute":
+            self.preprocess()
         #self.save()
 
 
