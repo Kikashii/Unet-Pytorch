@@ -116,8 +116,8 @@ class DatasetCreator:
         
         print(self.sample_names)
 
-        if hp["do_preprocess"] == "Compute":
-            self.preprocess()
+        # if hp["do_preprocess"] == "Compute":
+        #     self.preprocess()
         #self.save()
 
 
