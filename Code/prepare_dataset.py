@@ -113,10 +113,12 @@ class DatasetCreator:
             self.sample_names = np.load("sample_names.npy")
         else:
             self.sample_names = os.listdir(hp["raw_data_dir"])
+        
+        print(self.sample_names)
 
         if hp["do_preprocess"] == "Compute":
             self.preprocess()
-        self.save()
+        #self.save()
 
 
 if __name__ == "__main__":
