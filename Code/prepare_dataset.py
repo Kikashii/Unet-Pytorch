@@ -90,6 +90,8 @@ class DatasetCreator:
                                          step=hp["min_patch_size"]).squeeze(0)  # squeeze 0 to account for channel dim
                 seg_data = patchify.patchify(seg_data, (hp["min_patch_size"], hp["min_patch_size"], hp["min_patch_size"]),
                                              step=hp["min_patch_size"])
+                
+                print("check 2", data.shape, seg_data.shape)
 
                 # save patches as separate numpy files
                 if SAVE:
@@ -120,7 +122,7 @@ class DatasetCreator:
 
         if hp["do_preprocess"] == "Compute":
             self.preprocess()
-        #self.save()
+        self.save()
 
 
 if __name__ == "__main__":
