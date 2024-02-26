@@ -1,6 +1,5 @@
 raw_data_dir:/content/gdrive/MyDrive/Project/Unet-Pytorch/train_data
 training_dir:C:/Example/BraTS20/prep/train/
-validation_dir:C:/Example/BraTS20/prep/val/
 data_dir_name:data/
 seg_dir_name:mask/
 channel_names:flair,t1,t1ce,t2
