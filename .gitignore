@@ -3,3 +3,7 @@ __pycache__/
 sample_names.npy
 model_*
 hyperparameters.txt
+test.txt
+
+
+
