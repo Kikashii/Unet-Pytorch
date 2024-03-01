@@ -4,6 +4,7 @@ sample_names.npy
 model_*
 hyperparameters.txt
 test.txt
+env/
 
 
 
